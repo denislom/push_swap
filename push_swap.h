@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:18:39 by dlom              #+#    #+#             */
-/*   Updated: 2023/10/02 23:19:43 by dlom             ###   ########.fr       */
+/*   Updated: 2023/10/03 16:47:23 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-// # include "../libft/libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_stack
 {

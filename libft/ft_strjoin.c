@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 12:59:57 by dlom              #+#    #+#             */
-/*   Updated: 2023/09/16 17:43:17 by dlom             ###   ########.fr       */
+/*   Updated: 2023/10/03 17:09:42 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,28 @@ of ’s1’ and ’s2’.
 */
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*str;
 	int		i;
-	int		len1;
-	int		len2;
+	int		j;
+	char	*str;
 
-	if (!s1 || !s2)
-		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (len1 + len2) + 1);
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (s1[i])
+	j = 0;
+	if (s1 == NULL)
 	{
-		str[i] = s1[i];
-		i++;
+		s1 = (char *)malloc(sizeof(char));
+		s1[i] = '\0';
 	}
-	while (s2[i - len1])
-	{
-		str[i] = s2[i - len1];
-		i++;
-	}
+	if (s2 == NULL)
+		return (NULL);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (s1[j] != '\0')
+		str[i++] = s1[j++];
+	free(s1);
+	j = 0;
+	while (s2[j] != '\0')
+		str[i++] = s2[j++];
 	str[i] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:18:39 by dlom              #+#    #+#             */
-/*   Updated: 2023/10/03 16:47:23 by dlom             ###   ########.fr       */
+/*   Updated: 2023/10/03 21:36:12 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
+
+int		ft_check_dup(t_stack *a);
+void	ft_free(t_stack **lst);
+void	ft_print_error(void);
+int	ft_check_if_sorted(t_stack *stack_a);
 
 #endif

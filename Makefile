@@ -6,12 +6,12 @@
 #    By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 16:44:23 by dlom              #+#    #+#              #
-#    Updated: 2023/10/03 21:25:04 by dlom             ###   ########.fr        #
+#    Updated: 2023/11/17 18:24:36 by dlom             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	push_swap
-SRCS =	push_swap.c push_swap_utils.c
+SRCS =	push_swap.c \
 
 OBJS = $(SRCS:.c=.o)
 

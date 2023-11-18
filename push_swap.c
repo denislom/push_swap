@@ -6,26 +6,19 @@
 /*   By: dlom <dlom@student.42prague.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 00:42:04 by dlom              #+#    #+#             */
-/*   Updated: 2023/11/17 19:24:26 by dlom             ###   ########.fr       */
+/*   Updated: 2023/11/18 21:51:13 by dlom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* 
 https://www.youtube.com/watch?v=OaG81sDEpVk 
 	- Oceano push_swap
-https://www.youtube.com/watch?v=uBZHMkpsTfg&list=PLfqABt5AS4FmXeWuuNDS3XGENJO1VYGxl
+https://www.youtube.com/watch?v=uBZHMkpsTfg&list=
+PLfqABt5AS4FmXeWuuNDS3XGENJO1VYGxl
 	- Code Vault: Linked lists
 Checker_linux:
 https://github.com/rlinsdev/42-Push-swap
-*/
 
-#include "push_swap.h"
-// #include <fcntl.h>
-
-int	main(int argc, char **argv)
-{
-
-	
 	// JUST TEST OF THE LIBFT
 	// ft_printf("ahoj");
 	// char *line;
@@ -57,6 +50,43 @@ int	main(int argc, char **argv)
 	// 	close(fd[i]);
 	// 	i++;
 	// }
-	return (0);
 
+TO TEST IN TERMINAL:
+add:
+	if (sorted_stack(a))
+		write(2, "OK\n", 3);
+
+.push_swap 
+ ./push_swap 1 2 3 4 5 6 76 42 | wc -l
+*/
+
+#include "push_swap.h"
+// #include <fcntl.h>
+
+void	ft_push_swap(t_node **a, t_node **b)
+{
+	if (ft_lstlen(*a) == 2)
+		ft_sa(a);
+	if (ft_lstlen(*a) == 3)
+		ft_small_sort_of_3(a);
+	if (ft_lstlen(*a) > 3)
+		ft_big_sort(a, b);
+}
+
+int	main(int argc, char **argv)
+{
+	t_node	*a;
+	t_node	*b;
+
+	a = NULL;
+	b = NULL;
+	if (argc <= 1 || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	ft_create_stack(&a, argv + 1, argc == 2);
+	if (!sorted_stack(a))
+		ft_push_swap(&a, &b);
+	ft_free_stack(&a);
+	return (0);
 }
